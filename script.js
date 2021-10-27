@@ -31,11 +31,13 @@ image_HTML.addEventListener("click", function(){ //function anonima
 function aoClicarEmPontoA() {
     pontoA = pontoA + 1;
     pontoA_HTML.innerText = pontoA; // insere o valor de pontoA no HTML
+    winnerVerify() //lembre-se dos parenteses para dar o play
     // alert(`O time ${nomeTimeA} fez ${pontoA} pontos.`);
 }
 function aoClicarEmPontoB () {
     pontoB = pontoB + 1;
     pontoB_HTML.innerText = pontoB;
+    winnerVerify()
 }
 
 function resetThePoints (){
@@ -45,12 +47,19 @@ function resetThePoints (){
     pontoB_HTML.innerText = pontoB;
 };
 
+
+
 function winnerVerify (){
-    if (pontoA >=21) {
+   if (pontoA >=21) {
         setA = setA + 1
         setA_HTML.innerText = setA
         alert(`${nomeTimeA} ganhou o set!`)
-    
+        resetThePoints()}
+        else if (pontoB >=21){
+        setB = setB + 1
+        setB_HTML.innerText = setB
+        alert(`${nomeTimeB} ganhou o set!`)
+        resetThePoints()
     }
 }
 
